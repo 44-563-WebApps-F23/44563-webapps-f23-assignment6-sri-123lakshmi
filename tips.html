@@ -15,23 +15,61 @@
         <input type="button" onclick="tips()" value="Show tip">
     
 </form>
-<p id="result">This text will be replaced </p>
 
-<script> 
+<p id="result"></p>
 
-function tips() {
-            var baseV = parseInt(document.getElementById("base").value);
-            var tipV = parseInt(document.getElementById("tip").value);
-            var myOutput = "";
+    <script> 
+        function tips(){
+    var baseV = parseInt(document.getElementById("base").value);
+    var tipV = parseInt(document.getElementById("tip").value);
+    var myOutput = "";
             for (var i = 0; i < 5; i++) {
                 myOutput = myOutput + (tipV + "% is ") + (baseV * (tipV / 100)).toFixed(1) + "; ";
                 tipV = tipV + 4;
             }
             document.getElementById("result").innerHTML = "Tip are: " + (myOutput);
+}
+    </script>
 
+    <h2>Button Types</h2>
+
+    <form>
+        <input type="radio" id="sum" value="sum" onclick="chooseOp()">
+        <label for="sum">sum</label>
+        <br>
+        <input type="radio" id="diff" value="difference" onclick="chooseOp()">
+        <label for="diff">difference</label>
+        <br>
+        <input type="radio" id="mult" value="product" onclick="chooseOp()">
+        <label for="mult">multiply</label>
+    </form>
+
+    <p id="Calc"></p>
+
+    <script>
+        function chooseOp(){
+            console.log("Getting form values")
+            base = parseFloat(document.getElementById("base").value)
+            tip = parseFloat(document.getElementById("tip").value)
+            total = document.getElementById("Calc")
+
+               if(document.getElementById("sum").checked){
+                   total.innerHTML= "sum of "+ base +" and "+ tip +" is "+(base + tip)
+               }
+
+               else if(document.getElementById("diff").checked){
+                   total.innerHTML= "diff of "+ base +" and "+ tip +" is "+(base - tip)
+               }
+      
+               else if(document.getElementById("mult").checked){
+                total.innerHTML= "product of "+ base +" and "+ tip +" is "+(base * tip)
+               }
         }
-
-</script>
+    </script>
 
 </body>
 </html> 
+
+
+  
+

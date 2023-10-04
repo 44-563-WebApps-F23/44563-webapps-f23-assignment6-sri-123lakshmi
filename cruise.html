@@ -17,6 +17,7 @@
          <label for="pass">Pool Pass</label>
          <input type ="checkbox" id="pass" value="False" min=10 max=50 step=2> 
          <br>
+         <br>
          <input type="button" onclick="selectCruise()" value="Select a cruise">
 </form>
 
@@ -34,6 +35,42 @@
            result.innerHTML = JSON.stringify(my_cruise)
     }
 </script>
+<h2>Arthimalla Srilakshmi update goes on a cruise</h2>
+
+<form>
+         <label for="days">Enter the number of days</label>
+         <input type ="text" id="days" value="days" min=10 max=50 step=2> 
+         <br>
+         <br>
+         <label for="price">Enter price</label>
+         <input type ="text" id="price" autofocus> 
+         <br>
+         <br>
+         <input type="button" onclick="updateCruise()" value="Update the cruise">
+</form>
+
+<p id="updatecruise"></p>
+
+<script>
+         function updateCruise(){
+             console.log("Getting form values")
+             days = document.getElementById("days").value
+             price = document.getElementById("price").value
+             my_cruise["days"] = days;
+             my_cruise["price"] = price;
+             result = document.getElementById("updatecruise")
+             result.innerHTML = JSON.stringify(my_cruise)
+}
+</script>
+</body>
+</html> 
+
+
+
+
+
+
+
 
 
 

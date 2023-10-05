@@ -31,30 +31,22 @@
 </div>
 
 <script> 
-let good =0
-let oops =0
-function checkAuthor (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(age==nick){
-        good=good+1
-        alert("You got it right")
-    } else {
-        oops=oops+1
-        alert("Sorry")
-    }
-    if(oops==7)
-    {
-      const checkButton = document.getElementById("checkButton");
-      checkButton.disabled = true;
-      alert("Sorry, ran out of guesses")
-    }
-    out.innerHTML = "good count "+good+ " oops count "+oops
-    out.style.color="#ff0000"
+    let good=0;
+    var oops=0;
+  function checkAuthor(){
+      console.log("Getting form values")
+      String1 = document.getElementById("form1_age").value
+      String2 = document.getElementById("form1_nick").value
+      goodC = document.getElementById("good")
+      oopsC = document.getElementById("oops")
+      
+      
+      out = document.getElementById("result")
+      if(oops>=7)
+      {
+       wrongMethod()
+        
+      }
 }
 </script>
 <hr>

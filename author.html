@@ -23,13 +23,13 @@
     <label for="form1_nick">Guess the author</label>
     <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
 
-    <input type="button" onclick="checkAuthor()" value="Check the guesss">
+    <input type="button" id="alertA"onclick="checkAuthor()" value="Check the guesss">
 </form>
 <div>
     <h4 class="display-5" style="background-color: rgb(193, 127, 255); border: solid 3px rgb(74, 230, 12);">Displaying incorrect guesses</h4>
-    <p id="out">This text will be replaced</p>
+    
 </div>
-
+<p id="result>good: <span id = "good">0</span> Oops: <span id = "oops">0</span></p>
 <script> 
     let good=0;
     var oops=0;
@@ -47,6 +47,21 @@
        wrongMethod()
         
       }
+      else if(String1===String2){
+        good=good+1
+        alert("You got it right")
+        goodC.innerHTML=good
+    } else {
+        oops=oops+1
+        alert("Sorry")
+        oopsC.innerHTML=oops
+    }
+    function wrongMethod()
+    {
+      alert("Sorry, ran out of guesses")
+      document.getElementById("alertB").disabled = true
+    }
+
 }
 </script>
 <hr>

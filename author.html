@@ -29,25 +29,27 @@
     <h4 class="display-5" style="background-color: rgb(193, 127, 255); border: solid 3px rgb(74, 230, 12);">Displaying incorrect guesses</h4>
     
 </div>
-<p id="result>Good: <span id = "good">0</span> Oops: <span id = "oops">0</span></p>
+<p id="result">Good: <span id="good">0</span> Oops: <span id="oops">0</span></p>
+
 <script> 
-    let good=0;
-    var oops=0;
-  function checkAuthor(){
-      console.log("Getting form values")
-      String1 = document.getElementById("form1_age").value
-      String2 = document.getElementById("form1_nick").value
-      goodC = document.getElementById("good")
-      oopsC = document.getElementById("oops")
+  let good=0;
+  var oops=0;
+function checkAuthor(){
+    console.log("Getting form values")
+    String1 = document.getElementById("form1_age").value
+    String2 = document.getElementById("form1_nick").value
+    goodC = document.getElementById("good")
+    oopsC = document.getElementById("oops")
+    
+    
+    out = document.getElementById("result")
+    if(oops>=7)
+    {
+     wrongMethod()
       
-      
-      out = document.getElementById("result")
-      if(oops>=7)
-      {
-       wrongMethod()
-        
-      }
-      else if(String1===String2){
+    }
+    
+    else if(String1===String2){
         good=good+1
         alert("You got it right")
         goodC.innerHTML=good
@@ -61,7 +63,6 @@
       alert("Sorry, ran out of guesses")
       document.getElementById("alertB").disabled = true
     }
-
 }
 </script>
 <hr>
